@@ -8,8 +8,14 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    lazy var weatherView: WeatherView = {
+        let view = WeatherView()
         
+        return view
+    }()
+    
+    override func loadView() {
+        self.view = weatherView
     }
 }
